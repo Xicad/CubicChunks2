@@ -8,13 +8,12 @@ buildscript {
             url = 'https://maven.fabricmc.net/'
         }
     }
-    dependencies {
-        classpath 'net.fabricmc:fabric-loom:0.9.51'
-    }
 }
 plugins {
     id 'maven-publish'
     id 'checkstyle'
+    id 'fabric-loom' version '0.10-SNAPSHOT'
+
 }
 
 apply plugin: "fabric-loom"
@@ -41,7 +40,7 @@ task genAll {
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(16)
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
 
@@ -203,10 +202,12 @@ switch (OperatingSystem.current()) {
 
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings loom.layered() {
-        officialMojangMappings()
-        parchment("org.parchmentmc.data:parchment-1.17.1:2021.09.05@zip")
-    }
+    mappings minecraft.officialMojangMappings()
+    // Disabled until 1.18 parchment is available.
+//    mappings loom.layered() {
+//        officialMojangMappings()
+//        parchment("org.parchmentmc.data:parchment-1.17.1:2021.09.05@zip")
+//    }
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     // Add each module as a dependency
