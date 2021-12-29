@@ -1,8 +1,8 @@
-package io.github.opencubicchunks.cubicchunks.chunk.entity;
+package io.github.opencubicchunks.cubicchunks.chunk;
 
-public interface IsCubicEntityContext {
+public interface VerticalViewDistanceListener {
 
-    boolean isCubic();
+    void setIncomingVerticalViewDistance(int verticalDistance);
 
-    void setIsCubic(boolean isCubic);
+    int getVerticalViewDistance();
 }
