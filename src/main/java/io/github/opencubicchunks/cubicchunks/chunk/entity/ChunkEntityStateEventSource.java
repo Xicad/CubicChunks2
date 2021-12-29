@@ -1,5 +1,8 @@
-package io.github.opencubicchunks.cubicchunks.chunk.entity;
+package io.github.opencubicchunks.cubicchunks.chunk;
 
-public interface ChunkEntityStateEventSource {
-    void registerChunkEntityStateEventHandler(ChunkEntityStateEventHandler handler);
+public interface VerticalViewDistanceListener {
+
+    void setIncomingVerticalViewDistance(int verticalDistance);
+
+    int getVerticalViewDistance();
 }
