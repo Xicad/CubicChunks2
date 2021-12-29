@@ -1,9 +1,8 @@
-package io.github.opencubicchunks.cubicchunks.chunk.entity;
+package io.github.opencubicchunks.cubicchunks.chunk;
 
-import io.github.opencubicchunks.cubicchunks.world.level.CubePos;
+public interface VerticalViewDistanceListener {
 
-public interface ChunkEntityStateEventHandler {
-    void onCubeEntitiesLoad(CubePos pos);
+    void setIncomingVerticalViewDistance(int verticalDistance);
 
-    void onCubeEntitiesUnload(CubePos pos);
+    int getVerticalViewDistance();
 }
