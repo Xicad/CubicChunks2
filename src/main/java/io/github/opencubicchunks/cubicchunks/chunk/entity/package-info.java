@@ -1,7 +1,8 @@
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
-package io.github.opencubicchunks.cubicchunks.chunk.entity;
+package io.github.opencubicchunks.cubicchunks.chunk;
 
-import javax.annotation.ParametersAreNonnullByDefault;
+public interface VerticalViewDistanceListener {
 
-import io.github.opencubicchunks.cubicchunks.annotation.MethodsReturnNonnullByDefault;
+    void setIncomingVerticalViewDistance(int verticalDistance);
+
+    int getVerticalViewDistance();
+}
