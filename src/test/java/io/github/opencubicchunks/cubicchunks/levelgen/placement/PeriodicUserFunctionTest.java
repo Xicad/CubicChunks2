@@ -10,16 +10,13 @@ public class PeriodicUserFunctionTest {
     public void getValue() {
         PeriodicUserFunction periodicUserFunction = new PeriodicUserFunction.Builder().point(5, 25).point(10, 55).point(15, 105).repeatRange(0, 20).build();
 
-        assertEquals(105, periodicUserFunction.getValue(35), 0.0);
-        assertEquals(55, periodicUserFunction.getValue(30), 0.0);
+        assertEquals(105, periodicUserFunction.getValue(35), 0.0);;
         assertEquals(25, periodicUserFunction.getValue(25), 0.0);
 
         assertEquals(25, periodicUserFunction.getValue(5), 0.0);
-        assertEquals(55, periodicUserFunction.getValue(10), 0.0);
         assertEquals(105, periodicUserFunction.getValue(15), 0.0);
 
         assertEquals(105, periodicUserFunction.getValue(-5), 0.0);
-        assertEquals(55, periodicUserFunction.getValue(-10), 0.0);
         assertEquals(25, periodicUserFunction.getValue(-15), 0.0);
 
         //Interpolation
